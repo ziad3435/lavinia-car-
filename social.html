@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavinia | Alexandria's Premier Luxury Car Destination</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="Images/Logo.png" type="image/x-icon" sizes="20x20">
+  <style>
+    /* اوبن سورس بصراحه 😁 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .home {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: #1d1d1d;
+      padding: 25px 40px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu a:hover {
+      transform: translateY(-3px);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .icon-btn:hover {
+      opacity: 0.75;
+    }
+
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-btn span {
+      width: 24px;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    .hero {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(Images/media.avif) center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sm-out {
+      width: 100%;
+      padding: 80px 40px;
+      background-color: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .sm-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .sm-header {
+      text-align: center;
+    }
+
+    .sm-header h2 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: #d4af37;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .sm-header p {
+      color: #a0a0a0;
+      font-size: 1rem;
+    }
+
+    .sm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+      width: 100%;
+    }
+
+    .sm-card {
+      position: relative;
+      background: transparent;
+      padding: 32px 26px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .sm-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-6px);
+    }
+
+    .sm-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .sm-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4af37;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .sm-card:hover .sm-icon {
+      background: #d4af37;
+      color: #0b0b0b;
+    }
+
+    .sm-handle {
+      color: #a0a0a0;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .sm-count {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .sm-label {
+      color: #a0a0a0;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+
+    .sm-follow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d4af37;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    .sm-follow i {
+      font-size: 0.75rem;
+      transition: transform 0.3s ease;
+    }
+
+    .sm-card:hover .sm-follow i {
+      transform: translateX(4px);
+    }
+
+    .sm-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .sm-tags span {
+      color: #6f6f6f;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 7px 16px;
+      border-radius: 20px;
+    }
+
+    .app-promo-banner {
+      position: relative;
+      height: 200px;
+      width: 100%;
+      max-width: 1200px; 
+      margin: 60px auto; 
+      border-radius: 7px;
+      background: linear-gradient(rgba(255, 255, 255, 0.87), rgba(255, 254, 254, 0.3));
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      color: #000;
+      overflow: hidden;
+    }
+
+    .app-promo-overlay {
+      position: absolute;
+      right: -30px;
+      bottom: -124px;
+      height: 414px;
+      width: auto;
+      z-index: 1;
+      transform: rotate(-20deg); 
+      transition: all 1s ease;
+    }
+
+    .app-promo-banner:hover .app-promo-overlay {
+      transform: scale(2);
+    }
+
+
+    .app-promo-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-promo-content h2 {
+      font-size: 22px;
+      max-width: 450px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .app-promo-btn {
+      background-color: #333;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .app-promo-btn:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .ft-main {
+      width: 100%;
+      background-color: #fafafa;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .ft-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .ft-head-text {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .ft-head-text h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1b1f28;
+    }
+
+    .ft-head-text a {
+      color: #d4af37;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .ft-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .ft-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #1b1f28;
+      font-size: 18px;
+    }
+
+    .ft-logo-img {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .ft-brand-col p {
+      font-size: 12px;
+      color: #828282;
+      margin-top: 10px;
+    }
+
+    .ft-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1b1f28;
+    }
+
+    .ft-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ft-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .ft-col ul li a {
+      text-decoration: none;
+      font-size: 12px;
+      color: #4f4f4f;
+      transition: color 0.2s ease;
+    }
+
+    .ft-col ul li a:hover {
+      color: #d4af37;
+    }
+
+    .ft-col ul li a.ft-link-highlight {
+      color: #d4af37;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .menu-btn {
+        display: flex;
+      }
+
+      .logo img {
+        height: 42px;
+      }
+
+      .ft-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ft-brand-col {
+        grid-column: span 2;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sm-out {
+        padding: 50px 20px;
+      }
+
+      .app-promo-banner {
+        padding: 0 24px;
+        height: auto;
+        min-height: 200px;
+        margin: 40px auto;
+        width: calc(100% - 40px);
+      }
+
+      .app-promo-overlay {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sm-card {
+        padding: 25px 20px;
+      }
+    }
+
+    @media (max-width: 424px) {
+      .ft-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ft-brand-col {
+        grid-column: span 1;
+      }
+
+      .app-promo-content h2 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="home">
+    <header class="navbar">
+      <div class="nav-left">
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="models.html">Models</a>
+          <a href="store.html">Shop</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="logo">
+        <img src="Images/Logo.png" alt="Lavinia Logo">
+      </div>
+
+      <div class="nav-icons">
+        <button class="icon-btn" aria-label="Chat">
+          <i class="fa-regular fa-message"></i>
+        </button>
+        <button class="icon-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </header>
+ 
+    <section class="hero"></section>
+
+    <section class="sm-out" id="smial-media">
+      <div class="sm-container">
+
+        <div class="sm-header">
+          <h2>Follow Our Journey</h2>
+          <p>stay close to everything Lavinia.</p>
+        </div>
+
+        <div class="sm-grid">
+
+          <a href="#" class="sm-card">
+            <div class="sm-card-top">
+              <div class="sm-icon"><i class="fa-brands fa-instagram"></i></div>
+              <span class="sm-handle">@lavinia.eg</span>
+            </div>
+            <h3 class="sm-count">128K</h3>
+            <p class="sm-label">Followers on Instagram</p>
+            <span class="sm-follow">Follow <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="sm-card">
+            <div class="sm-card-top">
+              <div class="sm-icon"><i class="fa-brands fa-facebook-f"></i></div>
+              <span class="sm-handle">Lavinia Alexandria</span>
+            </div>
+            <h3 class="sm-count">64K</h3>
+            <p class="sm-label">Followers on Facebook</p>
+            <span class="sm-follow">Follow <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="sm-card">
+            <div class="sm-card-top">
+              <div class="sm-icon"><i class="fa-brands fa-tiktok"></i></div>
+              <span class="sm-handle">@lavinia.eg</span>
+            </div>
+            <h3 class="sm-count">302K</h3>
+            <p class="sm-label">Followers on TikTok</p>
+            <span class="sm-follow">Follow <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="sm-card">
+            <div class="sm-card-top">
+              <div class="sm-icon"><i class="fa-brands fa-youtube"></i></div>
+              <span class="sm-handle">Lavinia Alexandria</span>
+            </div>
+            <h3 class="sm-count">41K</h3>
+            <p class="sm-label">Subscribers on YouTube</p>
+            <span class="sm-follow">Subscribe <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="#" class="sm-card">
+            <div class="sm-card-top">
+              <div class="sm-icon"><i class="fa-brands fa-github"></i></div>
+              <span class="sm-handle">@lavinia_eg</span>
+            </div>
+            <h3 class="sm-count">22K</h3>
+            <p class="sm-label">Followers on X</p>
+            <span class="sm-follow">Follow <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+        </div>
+
+        <div class="sm-tags">
+          <span>#ChooseYourSpeed</span>
+          <span>#LaviniaAlexandria</span>
+          <span>#DriveTheExtraordinary</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="app-promo-banner">
+      <img src="Images/a4bdf9f9d9947b42ad45969a7cf5911e402568fa.png" class="app-promo-overlay" alt="Phone App">
+      <div class="app-promo-content">
+        <h2>Download the mobile application for bonus coupons and travel codes</h2>
+        <button type="button" class="app-promo-btn">Download mobile app</button>
+      </div>
+    </section>
+
+    <footer class="ft-main">
+      <div class="ft-head-text">
+        <h2>Explore the world with Lavinia</h2>
+        <a href="#">Discover new styles and experiences</a>
+      </div>
+
+      <div class="ft-container ft-grid">
+        <div class="ft-col ft-brand-col">
+          <div class="ft-logo">
+            <img src="Images/logo2.jpg" class="ft-logo-img" alt="Logo">
+            <span>Contact Lavinia</span>
+          </div>
+          <p>Y Style Y Choose Y Speed</p>
+        </div>
+
+        <div class="ft-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">New Zealand</a></li>
+            <li><a href="#">United States America (USA)</a></li>
+            <li><a href="#">Greece</a></li>
+            <li><a href="#">Maldives</a></li>
+            <li><a href="#">Singapore</a></li>
+            <li><a href="#" class="ft-link-highlight">See more</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Terms and Policies</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Reward system policy</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Cancel your bookings</a></li>
+            <li><a href="#">Use Coupon</a></li>
+            <li><a href="#">Refund Policies</a></li>
+            <li><a href="#">International Travel Documents</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+</body>
+</html>

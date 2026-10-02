@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavinia | Alexandria's Premier Luxury Car Destination</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="Images/Logo.png" type="image/x-icon" sizes="20x20">
+  <link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <h3 class="topbar-text"><a href="#">Sign in</a> now to discover yourself</h3>
+    <div class="topbar-close">x</div>
+  </div>
+
+   <!-- Home Page -->
+  <section class="home">
+    <header class="navbar">
+      <div class="nav-left">
+        <nav class="menu">
+          <a href="models.html">Models</a>
+          <a href="store.html">Shop</a>
+           <a href="social.html">social Media</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="logo">
+        <img src="Images/Logo.png" alt="Lavinia Logo">
+      </div>
+
+      <div class="nav-icons">
+        <button class="icon-btn" aria-label="Chat">
+          <i class="fa-regular fa-message"></i>
+        </button>
+        <button class="icon-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="banner">
+      <video class="banner-video" autoplay loop muted playsinline>
+        <source src="Images/mclaren-4.mp4" type="video/mp4">
+      </video>
+
+      <div class="banner-overlay"></div>
+
+      <div class="banner-content">
+        <div class="title-group">
+          <span class="tag">McLaren 765LT</span>
+          <h1 class="title">Lavinia</h1>
+        </div>
+
+        <a href="#" class="cta-btn">
+          <span class="cta-text">Choose Y Speed</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </main>
+  </section>
+  
+
+  <!-- About -->
+  <section class="about">
+      <div class="about-bg"></div>
+
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <div class="line"></div>
+          <span class="subtitle">Alexandria's Premier Luxury Car Destination</span>
+          <h2 class="heading">Choose<span class="gold"> Y </span>Speed</h2>
+
+          <p class="text">
+            Lavinia in Alexandria is recognized as the best luxury car showroom in the world,<br> offering an
+            unrivaled collection of modern supercars, hypercars, and luxury automobiles.<br> Our showroom features
+            exclusive brands including <br><span class="gold">Bugatti</span>, <span class="gold">Ferrari</span>,
+            <span class="gold">Lamborghini</span>, <span class="gold">Pagani</span>,
+            <span class="gold">Mercedes-Benz</span>, <span class="gold">Rolls-Royce</span>,
+            <span class="gold">McLaren</span> and <span class="gold">Porsche</span>.
+          </p>
+
+          <p class="text">
+            Renowned globally, Lavinia boasts an unparalleled collection<br> of luxury vehicles, establishing
+            Alexandria as the ultimate hub for car <br>enthusiasts and collectors in search of the world's most
+            exquisite automobiles.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="stats">
+            <div class="stat">
+              <h3 class="stat-num gold">No. <span class="gold">1</span></h3>
+              <p class="stat-label">Showroom Worldwide</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-num gold">4,000+</h3>
+              <p class="stat-label">Vehicles Sold</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-num gold">Est. 2022</h3>
+              <p class="stat-label">Alexandria</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- Cars -->
+  <!--  السيكشن ده شوفتوا على النت اديته للاي اي يفهمهوني ونقلته كل كود بايدي-->
+<section class="cars">
+  <div class="fc-configurator reveal" id="fcConfigurator">
+
+  <aside class="fc-sidebar order-2">
+    <button type="button" class="fc-side-toggle fc-back-toggle" id="fcBackBtn">
+      <i class="fa-solid fa-chevron-up"></i><span>Back</span>
+    </button>
+
+
+    <ul class="fc-car-list" id="fcCarList"></ul>
+
+    <button type="button" class="fc-side-toggle fc-next-toggle" id="fcSideNextBtn">
+      <span>Next</span><i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+  </aside>
+
+  <main class="fc-stage order-1">
+    <div class="fc-brand-row">
+      <span class="fc-model-badge" id="fcModelBadge">###</span>
+    </div>
+
+    <div class="fc-car-visual">
+      <img class="fc-car-image" id="fcCarImage" src="" alt="">
+      <div class="fc-ground-overlay"></div>
+    </div>
+
+    <button type="button" class="fc-discover-btn">DISCOVER MORE</button>
+
+    <span class="fc-price-tag" id="fcPriceTag"></span>
+
+    <div class="fc-actions-row">
+      <span>CONFIGURE</span><span class="fc-sep">|</span><span>ENQUIRE</span>
+    </div>
+
+    <div class="fc-nav-controls">
+      <button type="button" class="fc-nav-btn" id="fcPrevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+      <button type="button" class="fc-nav-btn" id="fcNextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </main>
+
+  </div>
+</section>
+
+<!-- Achievements -->
+ <section class="ac-achievement-section">
+<div class="ac-grid reveal" >
+ 
+  <div class="ac-card ac-card-text ac-order-1">
+    <h2>Made in Egypt since 2022</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla reprehenderit
+      architecto soluta culpa ipsa illum mollitia earum a facilis laborum ipsum nisi
+      ex quisquam nemo, maxime ullam rem vero. Inventore.
+    </p>
+    <a class="ac-btn" href="#">Learn more</a>
+  </div>
+
+  <div class="ac-card ac-card-img ac-order-2">
+    <img src="Images/Screenshot 2025-08-26 181744.png" alt="Team">
+  </div>
+
+  <div class="ac-card ac-card-img ac-order-3">
+    <img src="Images/Screenshot 2025-08-26 182231.png" alt="Team">
+  </div>
+
+  <div class="ac-card ac-card-text ac-order-4">
+    <h2>Our History</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla reprehenderit
+      architecto soluta culpa ipsa illum mollitia earum a facilis laborum ipsum nisi
+      ex quisquam nemo, maxime ullam rem vero. Inventore.
+    </p>
+    <a class="ac-btn" href="#">Learn more</a>
+  </div>
+</div>
+</section>
+
+<!-- Posters -->
+<section class="ac-products-section">
+  <h2 class="ac-section-title">CHOOSE Y DESIGN</h2>
+
+  <div class="ac-products-grid reveal">
+    <!-- Product 1 -->
+    <div class="ac-product-card">
+      <div class="ac-product-image">
+        <img src="Images/download.jfif" alt="Ferrari F40 Poster">
+      </div>
+      <h3>FERRARI F40 POSTER</h3>
+      <span class="ac-price">$35.00</span>
+      <p>Iconic red Ferrari F40 classic supercar poster with bold typography background.</p>
+      <button type="button" class="ac-btn-cart">ADD TO CART</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="ac-product-card">
+      <div class="ac-product-image">
+        <img src="Images/download (1).jfif" alt="Porsche 911 Turbo Poster">
+      </div>
+      <h3>PORSCHE 911 TURBO</h3>
+      <span class="ac-price">$30.00</span>
+      <p>Classic white Porsche 911 Turbo vector illustration on a two-tone geometric backdrop.</p>
+      <button type="button" class="ac-btn-cart">ADD TO CART</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="ac-product-card">
+    <div class="ac-product-image">
+    <img src="Images/Porsche 911 GT3RS.jfif" alt="Porsche GT3RS Poster">
+    </div>
+    <h3>PORSCHE 911 GT3 RS SPEC</h3>
+    <span class="ac-price">$40.00</span>
+    <p>Monochrome technical spec sheet poster featuring detailed specs and racing badges.</p>
+    <button type="button" class="ac-btn-cart">ADD TO CART</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="ac-product-card">
+      <div class="ac-product-image">
+        <img src="Images/Porsche 911 Targa 4 GTS, Carmine Red, Turbo S Wheels, Alcantara package GTS Carmine Red, Ceramic Composite brakes, Lowered.jfif" alt="Porsche 911 Targa 4 GTS Poster">
+      </div>
+      <h3>PORSCHE 911 TARGA 4 GTS</h3>
+      <span class="ac-price">$35.00</span>
+      <p>Sleek side-profile design of the red Porsche 911 Targa 4 GTS on a deep crimson background.</p>
+      <button type="button" class="ac-btn-cart">ADD TO CART</button>
+    </div>
+  </div>
+</section>
+
+<!-- App Banner -->
+<section class="app-promo-banner">
+  <img src="Images/a4bdf9f9d9947b42ad45969a7cf5911e402568fa.png" class="app-promo-overlay" alt="Phone App">
+  <div class="app-promo-content">
+    <h2>Download the mobile application for bonus coupons and travel codes</h2>
+    <button type="button" class="app-promo-btn">Download mobile app</button>
+  </div>
+</section>
+
+<!-- Brands-Partners -->
+<section class="Partners-section">
+  <div class="Partners-section-header reveal">
+    <h2 class="Partners-section-title">Our Brand Partners</h2>
+    <a href="#" class="see-all">See all</a>
+  </div>
+  <div class="brand-grid reveal">
+    <div class="brand-card act-1">
+      <img src="Images/Mercedes.webp" alt="Mercedes">
+      <span>Marcedes</span>
+    </div>
+    <div class="brand-card act-2">
+      <img src="Images/lamborghini.png" alt="lamborghini">
+      <span>Lamborgini</span>
+    </div>
+    <div class="brand-card act-3">
+      <img src="Images/Tesla.png" alt="Tesla">
+      <span>Tesla</span>
+    </div>
+    <div class="brand-card act-4">
+      <img src="Images/Bugatti.png" alt="Bugatti">
+      <span>Bugatti</span>
+    </div>
+    <div class="brand-card act-5">
+      <img src="Images/ferrari.png" alt="ferrari">
+      <span>Ferrari</span>
+    </div>
+    <div class="brand-card act-6">
+      <img src="Images/McLaren.png" alt="Mclaren">
+      <span>Mclaren</span>
+    </div>
+  </div>
+</section>
+
+<!-- Our Footprints -->
+<section class="footprints-section">
+  <h2 class="footprints-title">Our Footprints</h2>
+  <div class="grid grid-4 footprints-grid">
+    <div class="footprint-item">
+      <div class="footprint-icon"><i class="fa-solid fa-code-branch"></i></div>
+      <h3>200</h3>
+      <p>Branch</p>
+    </div>
+    <div class="footprint-item">
+      <div class="footprint-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+      <h3>4K</h3>
+      <p>Vehicles Sold</p>
+    </div>
+    <div class="footprint-item">
+      <div class="footprint-icon"><i class="fa-regular fa-smile"></i></div>
+      <h3>10M</h3>
+      <p>Happy People</p>
+    </div>
+    <div class="footprint-item">
+      <div class="footprint-icon"><i class="fa-solid fa-hands-holding"></i></div>
+      <h3>65M</h3>
+      <p>Our Volunteers</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="ft-main">
+  <div class="ft-head-text">
+    <h2>Explore the world with Lavinia</h2>
+        <a href="#">Discover new styles and experiences</a>
+      </div>
+
+      <div class="ft-container ft-grid">
+        <div class="ft-col ft-brand-col">
+          <div class="ft-logo">
+            <img src="Images/logo2.jpg" class="ft-logo-img" alt="Logo">
+            <span>Contact Lavinia</span>
+          </div>
+          <p>Y Style Y Choose Y Speed</p>
+    </div>
+
+    <div class="ft-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Advertising</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Australia</a></li>
+        <li><a href="#">New Zealand</a></li>
+        <li><a href="#">United States America (USA)</a></li>
+        <li><a href="#">Greece</a></li>
+        <li><a href="#">Maldives</a></li>
+        <li><a href="#">Singapore</a></li>
+        <li><a href="#" class="ft-link-highlight">See more</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Terms and Policies</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Reward system policy</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Cancel your bookings</a></li>
+        <li><a href="#">Use Coupon</a></li>
+        <li><a href="#">Refund Policies</a></li>
+        <li><a href="#">International Travel Documents</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 1) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    const bannerVideo = document.querySelector('.banner-video');
+
+    if (bannerVideo) {
+      bannerVideo.addEventListener('loadeddata', () => {
+        bannerVideo.classList.add('loaded');
+      });
+
+      if (bannerVideo.readyState >= 3) {
+        bannerVideo.classList.add('loaded');
+      }
+    }
+
+    const fcCars = [
+      { name: "Ferrari lUCE", badge: "Ferrari lUCE", price: "1,430,000$", img: "Images/6a57828b05899d001f65d73d-2026-superheader-ferrari-luce-red.avif" },
+      { name: "Bugatti Divo", badge: "Bugatti Divo", price: "1,000,000$", img: "Images/pngtree-super-car-bugatti-dual-color-tone-png-image_13875753.png" },
+      { name: "Bugatti Bolid", badge: "Bugatti Bolid", price: "2,470,000$", img: "Images/Bugatti-Bolide-Wikipedia.png" },
+      { name: "Tesla Cybertruck", badge: "tesla cybertruck", price: "1,390,000$", img: "Images/136955-tesla-cybertruck.png" },
+      { name: "Mclaren 765lt", badge: "mclaren 765lt", price: "2,400,000$", img: "Images/Mclaren-765lt-Stunning-Exterior-Feature-PNG.png", isNew: true },
+      { name: "Lamborgini Revuelto", badge: "Lamborgini Revuelto", price: "3,440,000$", img: "Images/Revuelto PM-modelChooser-desktop.png" },
+      { name: "Pagani Huayra", badge: "Pagani Huayra", price: "2,250,000$", img: "Images/30740-9-pagani-transparent.png" },
+      { name: "Mercedes Vision Avatar", badge: "mercedes vision avatar", price: "3,280,000$", img: "Images/Mercedes_Vision_AVTR-front-side-right.png" },
+      { name: "Ferrari Fxx K", badge: "ferrari fxx k", price: "4,320,000$", img: "Images/pngegg.png" },
+      { name: "Mazda Furai", badge: "mazda furai", price: "1,350,000$", img: "Images/FH6_Mazda_Furai.png" },
+      ];
+
+    let fcCurrent = 0;
+    const fcRoot = document.getElementById('fcConfigurator');
+
+    if (fcRoot) {
+      const fcCarList = fcRoot.querySelector('#fcCarList');
+      const fcModelBadge = fcRoot.querySelector('#fcModelBadge');
+      const fcCarImage = fcRoot.querySelector('#fcCarImage');
+      const fcPriceTag = fcRoot.querySelector('#fcPriceTag');
+
+      function fcRenderList() {
+        fcCarList.innerHTML = '';
+        fcCars.forEach((car, i) => {
+          const li = document.createElement('li');
+          li.className = 'fc-car-item' + (i === fcCurrent ? ' fc-active' : '');
+
+          const nameSpan = document.createElement('span');
+          nameSpan.textContent = car.name;
+          li.appendChild(nameSpan);
+
+          if (car.isNew) {
+            const badge = document.createElement('span');
+            badge.className = 'new-badge';
+            badge.textContent = 'NEW';
+            li.appendChild(badge);
+          }
+
+          li.addEventListener('click', () => fcTransitionTo(i));
+          fcCarList.appendChild(li);
+        });
+      }
+
+      function fcApplyCar() {
+        const car = fcCars[fcCurrent];
+        fcModelBadge.textContent = car.badge;
+        fcCarImage.src = car.img;
+        fcPriceTag.textContent = car.price;
+        fcRenderList();
+      }
+
+      function fcTransitionTo(newIndex) {
+        if (newIndex === fcCurrent) return;
+        fcCurrent = newIndex;
+
+        fcModelBadge.style.opacity = 0;
+        fcCarImage.classList.add('fc-hide');
+        fcPriceTag.classList.add('fc-hide');
+
+        setTimeout(() => {
+          fcApplyCar();
+          fcModelBadge.style.opacity = 1;
+          fcCarImage.classList.remove('fc-hide');
+          fcPriceTag.classList.remove('fc-hide');
+        }, 300);
+      }
+
+      function fcNext() { fcTransitionTo((fcCurrent + 1) % fcCars.length); }
+      function fcPrev() { fcTransitionTo((fcCurrent - 1 + fcCars.length) % fcCars.length); }
+
+      fcRoot.querySelector('#fcNextBtn').addEventListener('click', fcNext);
+      fcRoot.querySelector('#fcPrevBtn').addEventListener('click', fcPrev);
+      fcRoot.querySelector('#fcSideNextBtn').addEventListener('click', fcNext);
+      fcRoot.querySelector('#fcBackBtn').addEventListener('click', fcPrev);
+
+      fcApplyCar();
+    }
+
+    const revealItems = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+  </script>
+</body>
+
+</html>

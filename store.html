@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavinia | Alexandria's Premier Luxury Car Destination</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="Images/Logo.png" type="image/x-icon" sizes="20x20">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .home {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: #1d1d1d;
+      padding: 25px 40px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu a:hover {
+      transform: translateY(-3px);
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .icon-btn:hover {
+      opacity: 0.75;
+    }
+
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-btn span {
+      width: 24px;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    .hero {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(Images/1727197833077-blob.avif) center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    .ac-products-section {
+      width: 100%;
+      background-color: #0a0a0a;
+      padding: 60px 0;
+    }
+
+    .ac-section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: #c09f33;
+      margin-bottom: 60px;
+    }
+
+    .ac-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 0px 30px;
+    }
+
+    .ac-product-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: #ddd6d6;
+      transition: all 0.3s ease;
+    }
+
+    .ac-product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #ddd6d6;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .ac-product-card:hover .ac-product-image {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.64);
+    }
+
+    .ac-product-card:hover {
+      border: 1px solid rgba(51, 51, 51, 0.2);
+      padding: 10px;
+    }
+
+    .ac-product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ac-product-card h3 {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: #474747;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .ac-product-card .ac-price {
+      font-family: sans-serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #474747;
+      margin-bottom: 10px;
+    }
+
+    .ac-product-card p {
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      color: #888;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .ac-btn-cart {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      background: transparent;
+      border: 1px solid #ccc;
+      padding: 10px 0;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .ac-btn-cart:hover {
+      border-color: #474747;
+      background-color: #474747;
+      color: #fff;
+    }
+
+    .app-promo-banner {
+      position: relative;
+      height: 200px;
+      width: 100%;
+      max-width: 1200px; 
+      margin: 60px auto; 
+      border-radius: 7px;
+      background: linear-gradient(rgba(255, 255, 255, 0.87), rgba(255, 254, 254, 0.3));
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      color: #000;
+      overflow: hidden;
+    }
+
+    .app-promo-overlay {
+      position: absolute;
+      right: -30px;
+      bottom: -124px;
+      height: 414px;
+      width: auto;
+      z-index: 1;
+      transform: rotate(-20deg); 
+      transition: all 1s ease;
+    }
+
+    .app-promo-banner:hover .app-promo-overlay {
+      transform: scale(2);
+    }
+
+
+    .app-promo-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-promo-content h2 {
+      font-size: 22px;
+      max-width: 450px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .app-promo-btn {
+      background-color: #333;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .app-promo-btn:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .ft-main {
+      background-color: #fafafa;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .ft-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .ft-head-text {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .ft-head-text h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1b1f28;
+    }
+
+    .ft-head-text a {
+      color: #d4af37;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .ft-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .ft-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #1b1f28;
+      font-size: 18px;
+    }
+
+    .ft-logo-img {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .ft-brand-col p {
+      font-size: 12px;
+      color: #828282;
+      margin-top: 10px;
+    }
+
+    .ft-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1b1f28;
+    }
+
+    .ft-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ft-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .ft-col ul li a {
+      text-decoration: none;
+      font-size: 12px;
+      color: #4f4f4f;
+      transition: color 0.2s ease;
+    }
+
+    .ft-col ul li a:hover {
+      color: #d4af37;
+    }
+
+    .ft-col ul li a.ft-link-highlight {
+      color: #d4af37;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .menu-btn {
+        display: flex;
+      }
+
+      .logo img {
+        height: 42px;
+      }
+
+
+      .ft-brand-col {
+        grid-column: span 3;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 26px;
+      }
+
+      .ac-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 0 15px;
+      }
+
+      .app-promo-banner {
+        padding: 0 24px;
+        height: auto;
+        min-height: 200px;
+      }
+
+      .app-promo-overlay {
+        opacity: 0;
+      }
+
+      .ft-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ft-brand-col {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 424px) {
+      .ac-products-grid {
+       grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ft-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ft-brand-col {
+        grid-column: span 1;
+      }
+
+      .app-promo-content h2 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="home">
+    <header class="navbar">
+      <div class="nav-left">
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="models.html">Models</a>
+           <a href="social.html">social Media</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="logo">
+        <img src="Images/Logo.png" alt="Lavinia Logo">
+      </div>
+
+      <div class="nav-icons">
+        <button class="icon-btn" aria-label="Chat">
+          <i class="fa-regular fa-message"></i>
+        </button>
+        <button class="icon-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </header>
+ 
+    <section class="hero"></section>
+    <section class="ac-products-section">
+      <h2 class="ac-section-title">SHOP</h2>
+
+      <div class="ac-products-grid">
+        <!-- Product 1 -->
+        <div class="ac-product-card">
+          <div class="ac-product-image">
+            <img src="Images/download.jfif" alt="Ferrari F40 Poster">
+          </div>
+          <h3>FERRARI F40 POSTER</h3>
+          <span class="ac-price">$35.00</span>
+          <p>Iconic red Ferrari F40 classic supercar poster with bold typography background.</p>
+          <button type="button" class="ac-btn-cart">ADD TO CART</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="ac-product-card">
+          <div class="ac-product-image">
+            <img src="Images/download (1).jfif" alt="Porsche 911 Turbo Poster">
+          </div>
+          <h3>PORSCHE 911 TURBO</h3>
+          <span class="ac-price">$30.00</span>
+          <p>Classic white Porsche 911 Turbo vector illustration on a two-tone geometric backdrop.</p>
+          <button type="button" class="ac-btn-cart">ADD TO CART</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="ac-product-card">
+          <div class="ac-product-image">
+            <img src="Images/Porsche 911 GT3RS.jfif" alt="Porsche GT3RS Poster">
+          </div>
+          <h3>PORSCHE 911 GT3 RS SPEC</h3>
+          <span class="ac-price">$40.00</span>
+          <p>Monochrome technical spec sheet poster featuring detailed specs and racing badges.</p>
+          <button type="button" class="ac-btn-cart">ADD TO CART</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="ac-product-card">
+          <div class="ac-product-image">
+            <img src="Images/Porsche 911 Targa 4 GTS, Carmine Red, Turbo S Wheels, Alcantara package GTS Carmine Red, Ceramic Composite brakes, Lowered.jfif" alt="Porsche 911 Targa 4 GTS Poster">
+          </div>
+          <h3>PORSCHE 911 TARGA 4 GTS</h3>
+          <span class="ac-price">$35.00</span>
+          <p>Sleek side-profile design of the red Porsche 911 Targa 4 GTS on a deep crimson background.</p>
+          <button type="button" class="ac-btn-cart">ADD TO CART</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Section -->
+    <section class="app-promo-banner">
+      <img src="Images/a4bdf9f9d9947b42ad45969a7cf5911e402568fa.png" class="app-promo-overlay" alt="Phone App">
+      <div class="app-promo-content">
+        <h2>Download the mobile application for bonus coupons and travel codes</h2>
+        <button type="button" class="app-promo-btn">Download mobile app</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="ft-main">
+      <div class="ft-head-text">
+        <h2>Explore the world with Lavinia</h2>
+        <a href="#">Discover new styles and experiences</a>
+      </div>
+
+      <div class="ft-container ft-grid">
+        <div class="ft-col ft-brand-col">
+          <div class="ft-logo">
+            <img src="Images/logo2.jpg" class="ft-logo-img" alt="Logo">
+            <span>Contact Lavinia</span>
+          </div>
+          <p>Y Style Y Choose Y Speed</p>
+        </div>
+
+        <div class="ft-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">New Zealand</a></li>
+            <li><a href="#">United States America (USA)</a></li>
+            <li><a href="#">Greece</a></li>
+            <li><a href="#">Maldives</a></li>
+            <li><a href="#">Singapore</a></li>
+            <li><a href="#" class="ft-link-highlight">See more</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Terms and Policies</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Reward system policy</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Cancel your bookings</a></li>
+            <li><a href="#">Use Coupon</a></li>
+            <li><a href="#">Refund Policies</a></li>
+            <li><a href="#">International Travel Documents</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+</body>
+</html>
